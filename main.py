@@ -97,8 +97,6 @@ def step_5(name1='Rose McIver', name2='Ben Lamb'):
 			# Альтернатива для строчек 92-95
 			main_name[name] = main_name.get(name, 0) + 1
 
-
-	# print(main_name)
 	cast = []
 	for item in main_name:
 		if item not in (name1, name2) and main_name[item] > 2:
@@ -118,13 +116,13 @@ def step_6(types='Movie', year=2020, genre='Dramas'):
 	result = []
 	for item in run_sql(sql):
 		result.append(dict(item))
-	# return result
 	return json.dumps(result, indent=4, ensure_ascii=False)
 
 def run_sql(sql):
 	# with sqlite3.connect("./netflix.db") as connection:
 	# 	return connection.cursor().execute(sql).fetchall()
 
+	#Альтернатива строчка 122-123
 	with sqlite3.connect("./netflix.db") as connection:
 		connection.row_factory = sqlite3.Row
 
